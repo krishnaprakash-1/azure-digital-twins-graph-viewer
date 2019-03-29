@@ -196,7 +196,8 @@ function extendNodeProperties(node, type) {
     switch (type) {
         case "space": label = node.friendlyName ? node.friendlyName : node.name; break;
         case "device": label = node.friendlyName ? node.friendlyName : node.name; break;
-        case "sensor": label = node.friendlyName ? node.friendlyName : node.hardwareId; break;
+        //case "sensor": label = node.friendlyName ? node.friendlyName : node.hardwareId; break;
+        case "sensor": label = node.friendlyName ? node.friendlyName : node.port ? node.port : node.hardwareId; break;
         default: return;
     }
     $.extend(node, {
